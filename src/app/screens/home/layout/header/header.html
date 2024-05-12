@@ -1,0 +1,43 @@
+<div class="header">
+  <div class="header-container">
+    <div class="header-left">
+      <div class="logo">Logos</div>
+    </div>
+    <div class="mobile-bars" (click)="showMobileBars()">
+      <i class="fa-solid fa-bars bar-icon"></i>
+    </div>
+    <div class="header-right" [ngClass]="changeHeaderRightClasses()">
+      <ul>
+        <li><a [routerLink]="['']">{{ "Home" | translate}}</a></li>
+        <li><a [routerLink]="['about']">Hakkımızda</a></li>
+        <li><a [routerLink]="['likes']">Beğenilenler</a></li>
+        <li><a [routerLink]="['blogs']">Makaleler</a></li>
+        <li>
+          <a id="show-sub-category" (click)="showSubNodeCategory($event.currentTarget!)">Diğerleri
+            <i *ngIf="isShowMobilBars" class="fa-solid fa-chevron-down"></i></a>
+          <div class="sub-category-list">
+            <div class="sub-category"><a href="#1">Kategori-1</a></div>
+            <div class="sub-category"><a href="#2">Kategori-1</a></div>
+            <div class="sub-category"><a href="#3">Kategori-1</a></div>
+            <div class="sub-category"><a href="#4">Kategori-1</a></div>
+            <div class="sub-category"><a href="#5">Kategori-1</a></div>
+            <div class="sub-category"><a href="#6">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+            <div class="sub-category"><a href="#">Kategori-1</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,232 @@
+$header-height: 80px;
+$tablet-size: 1000px;
+
+
+@keyframes sidebar-effect-open {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes sidebar-effect-close {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+    display: none !important;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.sub-category-open {
+  box-sizing: border-box;
+  padding: 20px;
+  left: 5%;
+  right: 5%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @media screen and (max-width:$tablet-size) {
+    display: block;
+    width: 100%;
+    position: relative;
+    left: 0px;
+    padding: 0px;
+    margin: 0px;
+    overflow-y: scroll;
+  }
+
+}
+
+.header {
+  box-shadow: -2px -8px 79px -6px rgba(0, 0, 0, 0.30);
+  height: $header-height;
+
+  .header-container {
+    justify-content: space-between;
+    display: flex;
+    margin: 0px 5%;
+    height: 100%;
+
+    @media screen and (max-width:$tablet-size) {
+      margin: 0px 2%;
+    }
+
+    .header-left {
+      .logo {
+        color: black;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+      }
+    }
+
+    .mobile-bars {
+      align-items: center;
+      display: flex;
+
+      .bar-icon {
+        padding: 10px;
+        display: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media screen and (max-width:$tablet-size) {
+          display: block;
+        }
+      }
+    }
+
+    .header-right {
+      margin: 0px;
+      padding: 0px;
+      height: auto;
+      min-height: 100%;
+      z-index: 102;
+
+      @media screen and (max-width:$tablet-size) {
+        background-color: #ccc;
+        position: absolute;
+        width: 45%;
+        align-items: center;
+        top: $header-height;
+        right: 0px;
+      }
+
+      &.active {
+        animation: sidebar-effect-open 1s;
+        display: block;
+        opacity: 1;
+      }
+
+      &.deactive {
+        @media screen and (max-width:$tablet-size) {
+          opacity: 1;
+          animation: sidebar-effect-close 1s forwards;
+        }
+      }
+
+      ul {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+
+        @media screen and (max-width:$tablet-size) {
+          background-color: #ccc;
+          padding: 0px;
+          margin: 0px;
+          height: auto;
+          min-height: 100%;
+        }
+
+        li {
+          height: 100%;
+          font-weight: bold;
+          font-family: 'Courier New', Courier, monospace;
+          display: inline-block;
+
+          @media screen and (max-width:$tablet-size) {
+            display: block;
+            padding: 5px 5px;
+            height: auto;
+          }
+
+          a {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 10px;
+            margin: 2px;
+            color: black;
+            text-decoration: none;
+
+            i {
+              padding-left: 5px;
+            }
+
+            @media screen and (max-width:$tablet-size) {
+              font-size: 12px;
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+
+          &:hover {
+            box-sizing: border-box;
+            cursor: pointer;
+          }
+
+          &:hover .sub-category-list {
+            @media screen and (min-width:$tablet-size) {
+              box-sizing: border-box;
+              padding: 20px;
+              left: 5%;
+              right: 5%;
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+              height: 300px;
+              flex-wrap: wrap;
+              overflow: hidden;
+            }
+          }
+
+          .sub-category-list {
+            display: none;
+            top: $header-height;
+            background-color: #f0ededf1;
+
+            @media screen and (max-width:$tablet-size) {
+              background-color: transparent;
+              display: none;
+            }
+
+            .sub-category {
+              display: flex;
+              align-items: center;
+              vertical-align: middle;
+              padding-left: 20px;
+
+              @media screen and (max-width:$tablet-size) {
+                width: 100%;
+              }
+
+              &::before {
+                content: ">";
+                font-weight: 500;
+              }
+            }
+
+            @media screen and (max-width:$tablet-size) {
+              top: 0px;
+              width: 100%;
+              height: 300px;
+              position: relative;
+              overflow-y: scroll;
+            }
+          }
+        }
+      }
+    }
+  }
+}

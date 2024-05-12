@@ -1,0 +1,11 @@
+<div class="blog-container">
+  @for (item of data; track $index) {
+  <div class="blog">
+    <div class="blog-title">{{item.title.toUpperCase()}}</div>
+    <div class="blog-content">
+      {{item.body}}
+    </div>
+    <button type="button" class="blog-btn" (click)="addFavorite(item)">Favorilere Ekle</button>
+  </div>
+  }
+</div>

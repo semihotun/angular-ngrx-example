@@ -1,0 +1,7 @@
+{
+  "name": "ionex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

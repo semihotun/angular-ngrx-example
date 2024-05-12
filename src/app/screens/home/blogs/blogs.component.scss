@@ -1,0 +1,29 @@
+.blog {
+    padding: 2% 5%;
+    flex-direction: column;
+
+    .blog-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+    }
+
+    .blog-content {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .blog-btn {
+        border-radius: 5px;
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        float: inline-end;
+        background-color: black;
+        color: white;
+
+        &:hover {
+            background-color: #ccc;
+            transition: ease-in-out 0.2s;
+        }
+    }
+}
