@@ -1,17 +1,13 @@
-.blog {
+.word {
     padding: 2% 5%;
     flex-direction: column;
 
-    .blog-title {
+    .word-title {
         font-family: 'Times New Roman', Times, serif;
         font-size: 20px;
     }
 
-    .blog-content {
-        font-family: 'Courier New', Courier, monospace;
-    }
-
-    .blog-btn {
+    .word-btn {
         border-radius: 5px;
         display: block;
         width: auto;

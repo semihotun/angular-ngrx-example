@@ -1,11 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import { initialState } from '../state/initialState';
-import { BlogAction } from '../actions/blog.action';
+import { WordAction } from '../actions/blog.action';
 
 export const BlogReducer = createReducer(
-  initialState.blogs,
-  on(BlogAction.addBlogs, (state, { blog }) => [...state, blog]),
-  on(BlogAction.removeBlogs, (state, { blog }) =>
-    state.filter((x) => x.id !== blog.id)
+  initialState.words,
+  on(WordAction.addWord, (state, { word }) => [...state, word]),
+  on(WordAction.removeWord, (state, { word }) =>
+    state.filter((x) => x.id !== word.id)
   )
 );

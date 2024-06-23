@@ -1,8 +1,8 @@
-import { Blog } from 'src/app/models/blogs';
+import { Word } from 'src/app/models/word';
 
 export interface State {
-  blogs: Blog[];
+  words: Word[];
 }
 export const initialState: State = {
-  blogs: [],
+  words: [],
 };

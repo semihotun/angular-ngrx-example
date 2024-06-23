@@ -1,5 +1,5 @@
-import { Blog } from 'src/app/models/blogs';
+import { Word } from 'src/app/models/word';
 
 export interface Stores {
-  blogs: { blogs: Blog[] };
+  words: { words: Word[] };
 }

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subject, takeUntil } from 'rxjs';
-import { Blog } from 'src/app/models/blogs';
-import { BlogAction } from 'src/app/stores/actions/blog.action';
+import { Word } from 'src/app/models/word';
+import { WordAction } from 'src/app/stores/actions/blog.action';
 import { Stores } from 'src/app/stores/stores/store';
 @Component({
   selector: 'app-likes',
@@ -10,20 +10,20 @@ import { Stores } from 'src/app/stores/stores/store';
   styleUrls: ['./likes.component.scss'],
 })
 export class LikesComponent implements OnInit, OnDestroy {
-  blogs$: Blog[] = [];
+  words$: Word[] = [];
   onDestroy = new Subject<void>();
-  constructor(private store: Store<Stores['blogs']>) {
+  constructor(private store: Store<Stores['words']>) {
     store
-      .select('blogs')
+      .select('words')
       .pipe(takeUntil(this.onDestroy))
-      .subscribe((data) => (this.blogs$ = data));
+      .subscribe((data) => (this.words$ = data));
   }
   ngOnDestroy(): void {
     this.onDestroy.next();
   }
   ngOnInit() {}
-  removeFavorite(blog: Blog) {
-    this.store.dispatch(BlogAction.removeBlogs({ blog }));
+  removeFavorite(word: Word) {
+    this.store.dispatch(WordAction.removeWord({ word }));
     alert('Silindi');
   }
 }

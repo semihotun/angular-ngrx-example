@@ -1,11 +1,8 @@
-<div class="blog-container">
-  @for (item of blogs$; track $index) {
-  <div class="blog">
-    <div class="blog-title">{{item.title.toUpperCase()}}</div>
-    <div class="blog-content">
-      {{item.body}}
-    </div>
-    <button type="button" class="blog-btn" (click)="removeFavorite(item)">Favorilerden Sil</button>
+<div class="word-container">
+  @for (item of words$; track $index) {
+  <div class="word">
+    <div class="word-title">{{item.word}}</div>
+    <button type="button" class="word-btn" (click)="removeFavorite(item)">Favorilerden Sil</button>
   </div>
   }
 </div>

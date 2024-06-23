@@ -1,10 +1,10 @@
 import { createActionGroup, props } from '@ngrx/store';
-import { Blog } from 'src/app/models/blogs';
+import { Word } from 'src/app/models/word';
 
-export const BlogAction = createActionGroup({
-  source: 'Blogs',
+export const WordAction = createActionGroup({
+  source: 'Words',
   events: {
-    'Add Blogs': props<{ blog: Blog }>(),
-    'Remove Blogs': props<{ blog: Blog }>(),
+    'Add Word': props<{ word: Word }>(),
+    'Remove Word': props<{ word: Word }>(),
   },
 });
